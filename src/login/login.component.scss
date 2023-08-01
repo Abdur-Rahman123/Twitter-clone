@@ -1,0 +1,64 @@
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f1f1f1;
+  }
+  
+  .twitter-login {
+    background-color: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 400px;
+    width: 90%;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #1da1f2;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  button {
+    background-color: #1da1f2;
+    color: #fff;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  .button{
+    margin-top: 12px;
+  }
+  .mat-form-field{
+    margin-top: 12px;
+  }
+
+  button:hover {
+    background-color: #1985c8;
+  }
+  p {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  a {
+    color: #1da1f2;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  

@@ -1,1 +1,28 @@
-<p>login works!</p>
+<div class="container">
+    <div class="twitter-login">
+      <h1>Log in to Twitter</h1>
+      <form [formGroup]="loginForm">
+        <!-- <input type="text" placeholder="Email" formControlName="email">
+        <div *ngIf="loginForm.get('email').invalid && loginForm.get('email').touched">
+            <div *ngIf="loginForm.get('email').hasError('required')">Email is required.</div>
+            <div *ngIf="loginForm.get('email').hasError('email')">Use valid email</div>
+          </div>
+        <input type="password" placeholder="Password" formControlName="password">
+        <div *ngIf="loginForm.get('password').invalid && loginForm.get('password').touched">
+            <div *ngIf="loginForm.get('password').hasError('required')">Password is required.</div>
+          </div>
+        <button type="submit">Log in</button> -->
+        <mat-form-field>
+              <input type="email" matInput placeholder="Email" formControlName="email">
+              <mat-error *ngIf="loginForm.get('email').hasError('required')">Email is required.</mat-error>
+              <mat-error *ngIf="loginForm.get('email').hasError('email')">Use valid Email</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+              <input type="password" matInput placeholder="Password" formControlName="password">
+              <mat-error *ngIf="loginForm.get('password').hasError('required')">Password is required.</mat-error>
+            </mat-form-field>
+            <button class="button" (click)="onSubmit()">Login</button>
+      </form>
+      <p>Don't have account? <a [routerLink]="['/sign-up']">Sign-up</a></p>
+    </div>
+  </div>

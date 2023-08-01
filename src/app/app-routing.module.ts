@@ -5,8 +5,14 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () => import('../login/login.module')
-        .then(module => module.LoginModule),
-},
+      .then(module => module.LoginModule),
+  },
+
+  {
+    path: 'home',
+    loadChildren: () => import('../home/home.module')
+      .then(module => module.HomeModule),
+  },
 ];
 
 @NgModule({
