@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="twitter-signup">
+    <h1>Create your account</h1>
+    <form [formGroup]="signUpForm">
+      <mat-form-field>
+        <input type="text" matInput placeholder="username" formControlName="username">
+        <mat-error *ngIf="signUpForm.get('username').hasError('required')">Name is required.</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input type="email" matInput placeholder="Email" formControlName="email">
+        <mat-error *ngIf="signUpForm.get('email').hasError('required')">Email is required.</mat-error>
+        <mat-error *ngIf="signUpForm.get('email').hasError('email')">Use valid Email</mat-error>
+        <mat-error *ngIf="signUpForm.get('email').hasError('userExists')">User Already Exists with this Email</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input type="password" matInput placeholder="Password" formControlName="password">
+        <mat-error *ngIf="signUpForm.get('password').hasError('required')">Password is required.</mat-error>
+      </mat-form-field>
+      <button class="button" (click)="signUP()">Sign up</button>
+    </form>
+    <p>Already have an account? <a [routerLink]="['/login']">Log in</a></p>
+  </div>
+</div>
