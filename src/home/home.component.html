@@ -39,8 +39,8 @@
                 <mat-form-field appearance="outline" class="post-input">
                     <mat-label>What's happening?</mat-label>
                     <textarea matInput [(ngModel)]="post" placeholder="Compose your tweet"></textarea>
-                </mat-form-field>
-
+                  </mat-form-field>
+                  <div class="tweet-alert" *ngIf="post.length > 160">Tweet can't be more than 160</div>
                 <div class="post-actions">
                     <button mat-icon-button>
                         <mat-icon>photo</mat-icon>
@@ -55,7 +55,7 @@
                         <mat-icon>insert_emoticon</mat-icon>
                     </button>
                     <span class="flex-spacer"></span>
-                    <button [disabled]="post.length===0" mat-raised-button color="primary"
+                    <button [disabled]="post.length===0 || post.length>160" mat-raised-button color="primary"
                         (click)="createPost()">Tweet</button>
                 </div>
             </div>
