@@ -26,4 +26,12 @@ export class UserService {
   unFollowAUser(user_id: Follow): Observable<any> {
     return this.http.post<any>(this.BASE_URL+'unfollow', user_id);
   }
+
+  getFollowersList(id:number): Observable<any> {
+    return this.http.get<any>(this.BASE_URL+`users/${id}/followers`);
+  }
+
+  getFollowingList(id:number): Observable<any> {
+    return this.http.get<any>(this.BASE_URL+`users/${id}/following`);
+  }
 }

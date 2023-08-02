@@ -9,12 +9,16 @@ import { MatIconModule } from '@angular/material/icon';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserlistComponent } from './userlist/userlist.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { FollowersComponent } from './followers/followers.component';
+import { FollowingsComponent } from './followings/followings.component';
 
 
 @NgModule({
   declarations: [
     HomeComponent,
-    UserlistComponent
+    UserlistComponent,
+    FollowersComponent,
+    FollowingsComponent
   ],
   imports: [
     CommonModule,

@@ -16,6 +16,8 @@ export class HomeComponent implements OnInit {
   users:User[];
   userFollowStatusMap: { [userId: number]: boolean } = {};
   isShowAllUserList:boolean= false;
+  isShowFollowingList:boolean = false;
+  isShowFollersList:boolean = false;
   constructor(private formBuilder: FormBuilder,
     private userService:UserService) { 
     console.log('geo to home page');
@@ -97,6 +99,13 @@ export class HomeComponent implements OnInit {
     } catch (error) {
       console.log(error);
     }
+  }
+
+  viewFollowersList(){
+    this.isShowFollersList = true;
+  }
+  viewFollowingList(){
+    this.isShowFollowingList = true;
   }
 
 }

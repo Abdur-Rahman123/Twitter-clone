@@ -1,0 +1,36 @@
+<div class="who-to-follow">
+    <div class="who-to-follow__block">
+        <div class="who-to-follow__heading">
+            <span class="back-icon" (click)="backToNewsFeed()"><mat-icon>keyboard_backspace</mat-icon></span> follwers
+            List
+        </div>
+    </div>
+    <div *ngFor="let user of followings;let i=index">
+        <div class="who-to-follow__block">
+            <div class="who-to-follow__author-logo-placeholder"></div>
+            <div class="who-to-follow__content">
+                <div>
+                    <div class="who-to-follow__author-name">
+                        {{user.username}}
+                    </div>
+                    <div class="who-to-follow__author-slug">
+                        {{user.email}}
+                    </div>
+                </div>
+                <div (click)="toggleFollowStatus(user)" class="who-to-follow__button">
+                    {{ userFollowStatusMap[user.id]==false ? 'Follow' : 'Unfollow' }}
+                </div>
+            </div>
+        </div>
+    </div>
+     <!-- no follwers is available -->
+     <ng-container *ngIf="followings.length == 0">
+        <div class="who-to-follow__block">
+            <div class="who-to-follow__content-empty">
+                <div>
+                    No followings is available
+                </div>
+            </div>
+        </div>
+    </ng-container>
+</div>

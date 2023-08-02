@@ -6,9 +6,9 @@
                 <img src="assets/svg/home.svg" class="sidebar-menu__item-icon" />
                 Home
             </div>
-            <div class="sidebar-menu__item">
+            <div (click)="viewFollowersList()" class="sidebar-menu__item">
                 <img src="assets/svg/explore.svg" class="sidebar-menu__item-icon" />
-                Explore
+                Followers
             </div>
 
             <div class="sidebar-menu__item">
@@ -21,9 +21,9 @@
                 Messages
             </div>
 
-            <div class="sidebar-menu__item">
+            <div (click)="viewFollowingList()" class="sidebar-menu__item">
                 <img src="assets/svg/profile.svg" class="sidebar-menu__item-icon" />
-                Profile
+                Following
             </div>
 
             <div class="sidebar-menu__item">
@@ -34,7 +34,7 @@
     </div>
     
         <div class="layout__main">
-            <ng-container *ngIf="!isShowAllUserList">
+            <ng-container *ngIf="!isShowAllUserList && !isShowFollersList && !isShowFollowingList">
             <div class="post-box">
                 <mat-form-field appearance="outline" class="post-input">
                     <mat-label>What's happening?</mat-label>
@@ -189,6 +189,13 @@
         </ng-container>
             <ng-container *ngIf="isShowAllUserList">
                 <app-userlist (isShowAllUserList)="onChildValueUpdated($event)" [userlist]="users"></app-userlist>
+            </ng-container>
+            <ng-container *ngIf="isShowFollowingList">
+                <app-followings></app-followings>
+            </ng-container>
+
+            <ng-container *ngIf="isShowFollersList">
+                <app-followers></app-followers>
             </ng-container>
         </div>
    
