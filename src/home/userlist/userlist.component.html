@@ -9,7 +9,7 @@
             <div class="who-to-follow__author-logo-placeholder"></div>
             <div class="who-to-follow__content">
                 <div>
-                    <div class="who-to-follow__author-name">
+                    <div (click)="goToUserProfile(user.id)" class="who-to-follow__author-name">
                         {{user.username}}
                     </div>
                     <div class="who-to-follow__author-slug">

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { lastValueFrom } from 'rxjs';
 import { Follow } from 'src/models/follow.model';
 import { User } from 'src/models/user.model';
@@ -18,7 +19,7 @@ export class HomeComponent implements OnInit {
   isShowAllUserList:boolean= false;
   isShowFollowingList:boolean = false;
   isShowFollersList:boolean = false;
-  constructor(private formBuilder: FormBuilder,
+  constructor(private router: Router,
     private userService:UserService) { 
     console.log('geo to home page');
   }
@@ -106,6 +107,10 @@ export class HomeComponent implements OnInit {
   }
   viewFollowingList(){
     this.isShowFollowingList = true;
+  }
+
+  goToUserProfile(userId: number) {
+    this.router.navigate(['home/user', userId]);
   }
 
 }

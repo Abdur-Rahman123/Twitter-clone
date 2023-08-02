@@ -3,6 +3,7 @@ import { User } from 'src/models/user.model';
 import { UserService } from 'src/services/user.service';
 import { lastValueFrom } from 'rxjs';
 import { Follow } from 'src/models/follow.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-userlist',
@@ -19,7 +20,8 @@ export class UserlistComponent implements OnInit {
     if (!v) return;
     this.users = v;
   }
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService,
+    private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -67,4 +69,7 @@ export class UserlistComponent implements OnInit {
     }
   }
 
+  goToUserProfile(userId: number) {
+    this.router.navigate(['home/user', userId]);
+  }
 }

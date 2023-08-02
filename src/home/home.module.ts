@@ -11,6 +11,7 @@ import { UserlistComponent } from './userlist/userlist.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FollowersComponent } from './followers/followers.component';
 import { FollowingsComponent } from './followings/followings.component';
+import { UserDetailsComponent } from './user-details/user-details.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { FollowingsComponent } from './followings/followings.component';
     HomeComponent,
     UserlistComponent,
     FollowersComponent,
-    FollowingsComponent
+    FollowingsComponent,
+    UserDetailsComponent
   ],
   imports: [
     CommonModule,

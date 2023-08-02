@@ -34,4 +34,8 @@ export class UserService {
   getFollowingList(id:number): Observable<any> {
     return this.http.get<any>(this.BASE_URL+`users/${id}/following`);
   }
+
+  getTweetById(id:number): Observable<any> {
+    return this.http.get<any>(this.BASE_URL+`users/${id}/tweets`);
+  }
 }
