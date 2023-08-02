@@ -32,12 +32,14 @@
             </div>
         </div>
     </div>
-    <div class="layout__main">
-        <div class="post-box">
+    
+        <div class="layout__main">
+            <ng-container *ngIf="!isShowAllUserList">
+            <div class="post-box">
                 <mat-form-field appearance="outline" class="post-input">
                     <mat-label>What's happening?</mat-label>
                     <textarea matInput [(ngModel)]="post" placeholder="Compose your tweet"></textarea>
-                  </mat-form-field>
+                </mat-form-field>
 
                 <div class="post-actions">
                     <button mat-icon-button>
@@ -53,137 +55,143 @@
                         <mat-icon>insert_emoticon</mat-icon>
                     </button>
                     <span class="flex-spacer"></span>
-                    <button [disabled]="post.length===0" mat-raised-button color="primary" (click)="createPost()">Tweet</button>
+                    <button [disabled]="post.length===0" mat-raised-button color="primary"
+                        (click)="createPost()">Tweet</button>
                 </div>
-        </div>
+            </div>
 
-        <div class="tweet">
-            <img class="tweet__author-logo" src="assets/images/profile-image-1.jpg" />
-            <div class="tweet__main">
-                <div class="tweet__header">
-                    <div class="tweet__author-name">
-                        Becki (& Chris)
+            <div class="tweet">
+                <img class="tweet__author-logo" src="assets/images/profile-image-1.jpg" />
+                <div class="tweet__main">
+                    <div class="tweet__header">
+                        <div class="tweet__author-name">
+                            Becki (& Chris)
+                        </div>
+                        <div class="tweet__author-slug">
+                            @beckiandchris
+                        </div>
+                        <div class="tweet__publish-time">
+                            38m
+                        </div>
                     </div>
-                    <div class="tweet__author-slug">
-                        @beckiandchris
+                    <div class="tweet__content">
+                        Thank you
                     </div>
-                    <div class="tweet__publish-time">
-                        38m
-                    </div>
-                </div>
-                <div class="tweet__content">
-                    Thank you
                 </div>
             </div>
-        </div>
-        <div class="tweet">
-            <img class="tweet__author-logo" src="assets/images/profile-image-1.jpg" />
-            <div class="tweet__main">
-                <div class="tweet__header">
-                    <div class="tweet__author-name">
-                        Elixir Digest
+            <div class="tweet">
+                <img class="tweet__author-logo" src="assets/images/profile-image-1.jpg" />
+                <div class="tweet__main">
+                    <div class="tweet__header">
+                        <div class="tweet__author-name">
+                            Elixir Digest
+                        </div>
+                        <div class="tweet__author-slug">
+                            @elixirdigest
+                        </div>
+                        <div class="tweet__publish-time">
+                            10d
+                        </div>
                     </div>
-                    <div class="tweet__author-slug">
-                        @elixirdigest
+                    <div class="tweet__content">
+                        Yet Another Guide To Build a JSON API with Phoenix 1.5 shared in
+                        the latest Elixir Digest
+                        <a href="https://elixirdigest.net/digests/276">https://elixirdigest.net/digests/276</a>
+                        @_tamas_soos #myelixirstatus #elixirlang #phoenixframework
                     </div>
-                    <div class="tweet__publish-time">
-                        10d
-                    </div>
-                </div>
-                <div class="tweet__content">
-                    Yet Another Guide To Build a JSON API with Phoenix 1.5 shared in
-                    the latest Elixir Digest
-                    <a href="https://elixirdigest.net/digests/276">https://elixirdigest.net/digests/276</a>
-                    @_tamas_soos #myelixirstatus #elixirlang #phoenixframework
                 </div>
             </div>
-        </div>
 
-        <div class="tweet">
-            <img class="tweet__author-logo" src="assets/images/profile-image-1.jpg" />
-            <div class="tweet__main">
-                <div class="tweet__header">
-                    <div class="tweet__author-name">
-                        Chris Martin
+            <div class="tweet">
+                <img class="tweet__author-logo" src="assets/images/profile-image-1.jpg" />
+                <div class="tweet__main">
+                    <div class="tweet__header">
+                        <div class="tweet__author-name">
+                            Chris Martin
+                        </div>
+                        <div class="tweet__author-slug">
+                            @chris_martin
+                        </div>
+                        <div class="tweet__publish-time">
+                            15h
+                        </div>
                     </div>
-                    <div class="tweet__author-slug">
-                        @chris_martin
+                    <div class="tweet__content">
+                        One of my favorite things about the "ergonomics" of haskell is
+                        being able to leave underscores in code that isn't finished yet,
+                        and the type checker still works and provides useful information
+                        about the incomplete code. ("holes" --
+                        <a href="https://typeclasses.com/typed-holes">https://typeclasses.com/typed-holes</a>)
+                        <img class="tweet__image" src="assets/images/post-image-1.jpeg" />
                     </div>
-                    <div class="tweet__publish-time">
-                        15h
-                    </div>
-                </div>
-                <div class="tweet__content">
-                    One of my favorite things about the "ergonomics" of haskell is
-                    being able to leave underscores in code that isn't finished yet,
-                    and the type checker still works and provides useful information
-                    about the incomplete code. ("holes" --
-                    <a href="https://typeclasses.com/typed-holes">https://typeclasses.com/typed-holes</a>)
-                    <img class="tweet__image" src="assets/images/post-image-1.jpeg" />
                 </div>
             </div>
-        </div>
 
-        <div class="tweet">
-            <img class="tweet__author-logo" src="assets/images/profile-image-1.jpg" />
-            <div class="tweet__main">
-                <div class="tweet__header">
-                    <div class="tweet__author-name">
-                        Becki (& Chris)
+            <div class="tweet">
+                <img class="tweet__author-logo" src="assets/images/profile-image-1.jpg" />
+                <div class="tweet__main">
+                    <div class="tweet__header">
+                        <div class="tweet__author-name">
+                            Becki (& Chris)
+                        </div>
+                        <div class="tweet__author-slug">
+                            @beckiandchris
+                        </div>
+                        <div class="tweet__publish-time">
+                            38m
+                        </div>
                     </div>
-                    <div class="tweet__author-slug">
-                        @beckiandchris
+                    <div class="tweet__content">
+                        Thank you
                     </div>
-                    <div class="tweet__publish-time">
-                        38m
-                    </div>
-                </div>
-                <div class="tweet__content">
-                    Thank you
                 </div>
             </div>
-        </div>
 
-        <div class="tweet">
-            <img class="tweet__author-logo" src="assets/images/profile-image-1.jpg" />
-            <div class="tweet__main">
-                <div class="tweet__header">
-                    <div class="tweet__author-name">
-                        Becki (& Chris)
+            <div class="tweet">
+                <img class="tweet__author-logo" src="assets/images/profile-image-1.jpg" />
+                <div class="tweet__main">
+                    <div class="tweet__header">
+                        <div class="tweet__author-name">
+                            Becki (& Chris)
+                        </div>
+                        <div class="tweet__author-slug">
+                            @beckiandchris
+                        </div>
+                        <div class="tweet__publish-time">
+                            38m
+                        </div>
                     </div>
-                    <div class="tweet__author-slug">
-                        @beckiandchris
+                    <div class="tweet__content">
+                        Thank you
                     </div>
-                    <div class="tweet__publish-time">
-                        38m
-                    </div>
-                </div>
-                <div class="tweet__content">
-                    Thank you
                 </div>
             </div>
-        </div>
 
-        <div class="tweet">
-            <img class="tweet__author-logo" src="assets/images/profile-image-1.jpg" />
-            <div class="tweet__main">
-                <div class="tweet__header">
-                    <div class="tweet__author-name">
-                        Becki (& Chris)
+            <div class="tweet">
+                <img class="tweet__author-logo" src="assets/images/profile-image-1.jpg" />
+                <div class="tweet__main">
+                    <div class="tweet__header">
+                        <div class="tweet__author-name">
+                            Becki (& Chris)
+                        </div>
+                        <div class="tweet__author-slug">
+                            @beckiandchris
+                        </div>
+                        <div class="tweet__publish-time">
+                            38m
+                        </div>
                     </div>
-                    <div class="tweet__author-slug">
-                        @beckiandchris
+                    <div class="tweet__content">
+                        Thank you
                     </div>
-                    <div class="tweet__publish-time">
-                        38m
-                    </div>
-                </div>
-                <div class="tweet__content">
-                    Thank you
                 </div>
             </div>
+        </ng-container>
+            <ng-container *ngIf="isShowAllUserList">
+                <app-userlist (isShowAllUserList)="onChildValueUpdated($event)" [userlist]="users"></app-userlist>
+            </ng-container>
         </div>
-    </div>
+   
     <div class="layout__right-sidebar-container">
         <div class="layout__right-sidebar">
             <div class="trends-for-you">
@@ -223,62 +231,36 @@
                     </div>
                 </div>
             </div>
-            <div class="who-to-follow">
-                <div class="who-to-follow__block">
-                    <div class="who-to-follow__heading">
-                        Who to follow
-                    </div>
-                </div>
-                <div class="who-to-follow__block">
-                    <img class="who-to-follow__author-logo" src="assets/images/profile-image-1.jpg" />
-                    <div class="who-to-follow__content">
-                        <div>
-                            <div class="who-to-follow__author-name">
-                                Becki (& Chris)
-                            </div>
-                            <div class="who-to-follow__author-slug">
-                                @beckiandchris
-                            </div>
-                        </div>
-                        <div class="who-to-follow__button">
-                            Follow
+            <ng-container *ngIf="!isShowAllUserList">
+                <div class="who-to-follow">
+                    <div class="who-to-follow__block">
+                        <div class="who-to-follow__heading">
+                            Who to follow
                         </div>
                     </div>
-                </div>
-                <div class="who-to-follow__block">
-                    <img class="who-to-follow__author-logo" src="assets/images/profile-image-2.png" />
-                    <div class="who-to-follow__content">
-                        <div>
-                            <div class="who-to-follow__author-name">
-                                Elixir Digest
+                    <div *ngFor="let user of users;let i=index">
+                        <div *ngIf="i<3" class="who-to-follow__block">
+                            <div class="who-to-follow__author-logo-placeholder"></div>
+                            <div class="who-to-follow__content">
+                                <div>
+                                    <div class="who-to-follow__author-name">
+                                        {{user.username}}
+                                    </div>
+                                    <div class="who-to-follow__author-slug">
+                                        {{user.email}}
+                                    </div>
+                                </div>
+                                <div class="who-to-follow__button">
+                                    Follow
+                                </div>
                             </div>
-                            <div class="who-to-follow__author-slug">
-                                @elixirdigest
-                            </div>
-                        </div>
-                        <div class="who-to-follow__button">
-                            Follow
                         </div>
                     </div>
-                </div>
-
-                <div class="who-to-follow__block">
-                    <img class="who-to-follow__author-logo" src="assets/images/profile-image-3.jpg" />
-                    <div class="who-to-follow__content">
-                        <div>
-                            <div class="who-to-follow__author-name">
-                                Chris Martin
-                            </div>
-                            <div class="who-to-follow__author-slug">
-                                @chris_martin
-                            </div>
-                        </div>
-                        <div class="who-to-follow__button">
-                            Follow
-                        </div>
+                    <div (click)="seeAllUserlist()" class="see-more">
+                        <a>See more</a>
                     </div>
                 </div>
-            </div>
+            </ng-container>
         </div>
     </div>
 </div>

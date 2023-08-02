@@ -23,7 +23,7 @@ export class AuthInterceptor implements HttpInterceptor {
       // Clone the request and add the Authorization header with the JWT token
       request = request.clone({
         setHeaders: {
-          Authorization: `Bearer ${jwtToken}`,
+          'X-Jwt-Token': `Bearer ${jwtToken}`,
         },
       });
     }

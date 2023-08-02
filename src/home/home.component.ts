@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { lastValueFrom } from 'rxjs';
+import { User } from 'src/models/user.model';
 import { UserService } from 'src/services/user.service';
 
 @Component({
@@ -11,6 +12,8 @@ import { UserService } from 'src/services/user.service';
 export class HomeComponent implements OnInit {
 
   post:string='';
+  users:User[];
+  isShowAllUserList:boolean= false;
   constructor(private formBuilder: FormBuilder,
     private userService:UserService) { 
     console.log('geo to home page');
@@ -19,7 +22,7 @@ export class HomeComponent implements OnInit {
   postForm: FormGroup;
 
   ngOnInit(): void {
-  
+  this.getUserList();
   }
 
   async createPost(){
@@ -34,6 +37,25 @@ export class HomeComponent implements OnInit {
       }catch(error){
         console.log(error);
       }
+  }
+
+  async getUserList(){
+    try{
+    let response = await lastValueFrom(this.userService.getUserList())
+    console.log('value',response)
+    this.users = response?.users;
+    }catch(error){
+      console.log(error)
+    }
+
+  }
+
+  seeAllUserlist():void{
+    this.isShowAllUserList = true;
+  }
+
+  onChildValueUpdated(updatedValue: boolean){
+    this.isShowAllUserList = updatedValue;
   }
 
 }

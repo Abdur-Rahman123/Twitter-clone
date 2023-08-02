@@ -144,12 +144,12 @@
   }
   
   
-  .who-to-follow__block {
-    padding: 10px 15px;
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid #e6ecf0;
-  }
+//   .who-to-follow__block {
+//     padding: 10px 15px;
+//     display: flex;
+//     align-items: center;
+//     border-bottom: 1px solid #e6ecf0;
+//   }
   
   .who-to-follow__block:last-child {
     border-bottom: none;
@@ -182,6 +182,7 @@
     font-size: 19px;
     font-weight: bold;
     color: #14171a;
+    margin: 12px 12px;
   }
   
   .who-to-follow__button {
@@ -224,4 +225,27 @@
       }
     }
   }
+
+  .who-to-follow__block {
+    display: flex;
+    align-items: center;
+  }
+  
+  .who-to-follow__author-logo-placeholder {
+    width: 50px; 
+    height: 50px;
+    background-color: #f0f0f0; 
+    border-radius: 50%; 
+    margin-right: 15px;
+    margin-left: 4px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+  }
+  .see-more{
+    color: rgb(29, 155, 240);
+    margin: 16px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
   
