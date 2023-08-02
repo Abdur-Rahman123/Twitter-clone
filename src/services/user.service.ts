@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Follow } from 'src/models/follow.model';
+import { SearchUser } from 'src/models/search-user.model';
 
 @Injectable({
   providedIn: 'root'
@@ -37,5 +38,13 @@ export class UserService {
 
   getTweetById(id:number): Observable<any> {
     return this.http.get<any>(this.BASE_URL+`users/${id}/tweets`);
+  }
+
+  searchByUserName(search:SearchUser): Observable<any> {
+    return this.http.post<any>(this.BASE_URL+`search`,search);
+  }
+
+  getTimeLinePost(): Observable<any> {
+    return this.http.get<any>(this.BASE_URL+`timeline`);
   }
 }

@@ -12,7 +12,6 @@
   }
   
   .layout__right-sidebar {
-    position: fixed;
     width: 350px;
   }
 
@@ -143,14 +142,6 @@
     border-radius: 15px;
   }
   
-  
-//   .who-to-follow__block {
-//     padding: 10px 15px;
-//     display: flex;
-//     align-items: center;
-//     border-bottom: 1px solid #e6ecf0;
-//   }
-  
   .who-to-follow__block:last-child {
     border-bottom: none;
   }
@@ -252,5 +243,73 @@
   .tweet-alert{
     color: red;
   }
+
+  .container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+}
+
+.search {
+    padding: 10px 15px;
+    background-color: #1DA1F2;
+    border: none;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+#search-results {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+
+
+/* ...Previous CSS styles... */
+
+.tweet {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.username {
+  font-weight: bold;
+}
+
+.content {
+  margin-top: 5px;
+}
+
+.timestamp {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+/* ...Remaining CSS styles... */
+
+
   
   
