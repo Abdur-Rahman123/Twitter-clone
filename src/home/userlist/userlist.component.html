@@ -16,8 +16,8 @@
                         {{user.email}}
                     </div>
                 </div>
-                <div class="who-to-follow__button">
-                    Follow
+                <div (click)="toggleFollowStatus(user)" class="who-to-follow__button">
+                    {{ userFollowStatusMap[user.id] ? 'Unfollow' : 'Follow' }}
                 </div>
             </div>
         </div>

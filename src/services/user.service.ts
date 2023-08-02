@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Follow } from 'src/models/follow.model';
 
 @Injectable({
   providedIn: 'root'
@@ -16,5 +17,13 @@ export class UserService {
 
   getUserList(): Observable<any> {
     return this.http.get<any>(this.BASE_URL+'users');
+  }
+
+  followAUser(user_id: Follow): Observable<any> {
+    return this.http.post<any>(this.BASE_URL+'follow', user_id);
+  }
+
+  unFollowAUser(user_id: Follow): Observable<any> {
+    return this.http.post<any>(this.BASE_URL+'unfollow', user_id);
   }
 }
